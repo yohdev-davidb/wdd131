@@ -119,6 +119,11 @@ footer {
     font-size: 14px;
 }
 
+main h1 {
+    text-align: center;
+    padding: 10px;
+}
+
 footer p {
     margin: 5px 0;
 }
