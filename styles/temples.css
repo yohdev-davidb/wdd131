@@ -24,6 +24,11 @@ nav ul li a {
     padding: 10px;
 }
 
+nav ul h1 { 
+    color: white;
+}
+    
+
 nav ul li a:hover {
     background-color: #6a1b9a;
     border-radius: 5px;
@@ -119,8 +124,11 @@ footer {
 footer p {
     margin: 5px 0;
 }
+<<<<<<< HEAD
 
 footer {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+=======
+>>>>>>> cc2aa6674106491de77542776b148b20ddbbb0c0
