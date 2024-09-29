@@ -23,7 +23,9 @@ nav ul {
     }
 }
 
-
+nav ul h1 { 
+    color: white;
+}
 
 
 footer {
