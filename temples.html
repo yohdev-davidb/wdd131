@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David Brooke">
+    <meta name="description"
+        content="A page that shows temples and changes dynamically depending on the size of screen. Has a hamburger menu.">
+    <title> Temple Album </title>
+    <link href="/temples.css" rel="stylesheet">
+    <link href="/styles/temples-large.css" rel="stylesheet">
+    <link href="/styles/temples.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li> <a href="#"> Home </a> </li>
+                <li><a href="#"> Old </a> </li>
+                <li><a href="#"> New </a> </li>
+                <li><a href="#"> Large </a> </li>
+                <li><a href="#"> Small </a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <main>
+            <h1>Temple Album</h1>
+            <div class="image-grid">
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 1">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 2">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 3">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 4">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 5">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 6">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 7">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 8">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 9">
+                </figure>
+                <figure>
+                    <img src="/images/Salt Lake Temple Sept 2004.jpg" alt="Temple 10">
+                </figure>
+            </div>
+        </main>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dave Brooke - Statesville</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="/scripts/temples.js" defer></script>
+    <script>
+        document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();
+    </script>
+
+    <script src="/scripts/temples.js" defer>  </script>
+</body>
+
+</html>

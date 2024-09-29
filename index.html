@@ -50,8 +50,13 @@
 
     <footer>
         <p>&copy; 2024 Dave Brooke - Statesville</p>
-        <p>Last Modification: 09/22/2024</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
+
+    <script src="/scripts/temples.js" defer></script>
+    <script>
+        document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();
+    </script>
 
 </body>
 
