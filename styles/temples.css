@@ -69,10 +69,8 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Hide the menu by default on mobile and show the hamburger icon */
 .menu-toggle {
     display: none;
-    /* Default hidden for desktop */
     background-color: #4a148c;
     color: white;
     border: none;
