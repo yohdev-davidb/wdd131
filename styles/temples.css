@@ -66,7 +66,8 @@ nav ul li a.active {
 
 /* Hide the menu by default on mobile and show the hamburger icon */
 .menu-toggle {
-    display: none; /* Default hidden for desktop */
+    display: none;
+    /* Default hidden for desktop */
     background-color: #4a148c;
     color: white;
     border: none;
@@ -94,7 +95,7 @@ nav ul {
     }
 
     .menu-toggle {
-        display: block; 
+        display: block;
     }
 
     nav ul.active {
