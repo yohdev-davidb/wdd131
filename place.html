@@ -46,12 +46,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Dave Brooke - Statesville</p>
+        <p>&copy; <span id="currentYear"></span> Dave Brooke - Statesville</p>
         <p>Last Modification: <span id="lastModified"></span></p>
-
-        <script>
-            document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();
-        </script>
     </footer>
 
     <script src="scripts/place.js"></script>

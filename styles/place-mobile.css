@@ -1,4 +1,3 @@
-/* Ensure the html and body take full height */
 html,
 body {
     height: 100%;
@@ -6,21 +5,16 @@ body {
     padding: 0;
 }
 
-/* Flexbox layout for the body */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Full viewport height */
 }
 
-/* Main content should grow to fill available space */
 main {
     flex: 1;
-    /* Allow main to grow and fill available space */
 }
 
-/* Header styling */
 header {
     background-color: #0073e6;
     color: white;
@@ -28,17 +22,14 @@ header {
     text-align: center;
 }
 
-/* Image container styling */
 .image-container {
     background-image: url('images/Colorful Dress Woman.jpg');
-    /* Replace with your image */
     height: 300px;
     background-size: cover;
     background-position: center;
     margin: 0 auto;
 }
 
-/* Data and weather styling */
 .data,
 .weather,
 ul li {
@@ -53,21 +44,16 @@ ul li {
 .data,
 .weather {
     position: static;
-    /* Remove absolute positioning for mobile */
     background-color: rgba(255, 255, 255, 0.9);
     width: 90%;
-    /* Full width with some margins */
     margin: 10px auto;
-    /* Center the elements */
     padding: 10px;
     box-shadow: none;
-    /* Remove shadows for a cleaner mobile look */
 }
 
 .data ul,
 .weather ul {
     padding: 15px;
-    /* Less padding on mobile */
 }
 
 .data h2,
@@ -76,12 +62,10 @@ ul li {
     color: white;
     margin: 0;
     padding: 15px;
-    /* Less padding for headings on mobile */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
 
-/* Footer styling */
 footer {
     background-color: #333;
     color: white;
@@ -89,9 +73,6 @@ footer {
     padding: 1rem;
     width: 100%;
     position: relative;
-    /* Ensure footer is positioned normally */
     margin-top: auto;
-    /* Push footer to the bottom */
     bottom: auto;
-    /* Override any bottom positioning */
 }
