@@ -16,7 +16,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2em;
 }
 
 .info-panel {
@@ -36,7 +35,7 @@ main {
 }
 
 .image-panel {
-    margin: 20px;
+    margin: 0px;
 }
 
 .image-panel img {
@@ -44,12 +43,24 @@ main {
     height: auto;
 }
 
+
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1em;
-    position: absolute;
     width: 100%;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .info-panel {
+        flex-direction: column;
+    }
+
+    .info-panel .data,
+    .info-panel .weather {
+        width: 100%;
+    }
 }
