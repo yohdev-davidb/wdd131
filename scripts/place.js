@@ -1,4 +1,3 @@
-
 const temperature = 10;
 const windSpeed = 5;
 
@@ -18,4 +17,5 @@ if (temperature <= 10 && windSpeed > 4.8) {
     document.getElementById("windChill").textContent = "N/A";
 }
 
+document.getElementById("currentYear").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();

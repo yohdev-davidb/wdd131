@@ -75,14 +75,12 @@ li {
     color: inherit;
 }
 
-@media (min-width: 769px) {
-    footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-    }
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
