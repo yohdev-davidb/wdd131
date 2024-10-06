@@ -2,7 +2,6 @@
 
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,44 +17,36 @@
     </header>
 
     <main>
-        <section class="info-panel">
+        <section class="image-container">
+            <img src="images/Strange Tree in Rocky Area.jpg" alt="Socotra Island">
+
+            <!-- Info panels positioned on top of the image -->
             <div class="data">
                 <h2>Data</h2>
                 <ul>
                     <li>Population: 123,456</li>
                     <li>Timezone: UTC +3</li>
                     <li>Languages: English, French</li>
-                    <!-- Add more data as needed -->
                 </ul>
             </div>
+
             <div class="weather">
                 <h2>Weather</h2>
                 <ul>
                     <li>Temperature: 27°C</li>
                     <li>Condition: Sunny</li>
-                    <!-- Add more weather details as needed -->
                 </ul>
             </div>
         </section>
-
-        <section class="image-panel">
-            <img src="images/Strange Tree in Rocky Area.jpg" alt="Socotra Island">
-        </section>
     </main>
-
-
-
-
 
     <footer>
         <p>&copy; 2024 Dave Brooke - Statesville</p>
         <p>Last Modification: <span id="lastModified"></span></p>
 
         <script>
-            document.getElementById("lastModified").textContent = new Date
-                (document.lastModified).toLocaleDateString();
+            document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();
         </script>
-
     </footer>
 
 </body>
