@@ -1,0 +1,55 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2em;
+}
+
+.info-panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.info-panel .data,
+.info-panel .weather {
+    width: 45%;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.image-panel {
+    margin: 20px;
+}
+
+.image-panel img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
