@@ -23,8 +23,15 @@ header {
     display: block;
 }
 
-.data ul li {
-    text-decoration: none;
+.data,
+.weather,
+ul li {
+    list-style-type: none;
+    padding: .5rem;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .data,
