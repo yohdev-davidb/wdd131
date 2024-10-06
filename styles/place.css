@@ -37,7 +37,8 @@ ul li {
 
 .data,
 .weather {
-    position: absolute; /* Absolute positioning for desktop */
+    position: absolute;
+    /* Absolute positioning for desktop */
     background-color: rgba(255, 255, 255, 0.9);
     padding: 0;
     border-radius: 8px;
@@ -46,12 +47,18 @@ ul li {
 
 .data h2,
 .weather h2 {
-    background-color: #336633; /* Dark green color for the heading */
-    color: white; /* White text */
-    margin: 0; /* Remove margin */
-    padding: 20px; /* Add padding to the heading */
-    border-top-left-radius: 8px; /* Round top left corner */
-    border-top-right-radius: 8px; /* Round top right corner */
+    background-color: #336633;
+    /* Dark green color for the heading */
+    color: white;
+    /* White text */
+    margin: 0;
+    /* Remove margin */
+    padding: 20px;
+    /* Add padding to the heading */
+    border-top-left-radius: 8px;
+    /* Round top left corner */
+    border-top-right-radius: 8px;
+    /* Round top right corner */
 }
 
 .data ul,
