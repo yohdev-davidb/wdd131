@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Assignment</title>
     <meta name="author" content="Dave Brooke">
     <meta name="description" content="Site to show the details of something for class">
+    <!-- Load mobile CSS first -->
     <link rel="stylesheet" href="styles/place-mobile.css" type="text/css">
+    <!-- Load desktop CSS for screens wider than 768px -->
     <link rel="stylesheet" href="styles/place.css" type="text/css" media="screen and (min-width: 769px)">
 </head>
-
 <body>
     <header>
         <h1>Socotra Island</h1>
@@ -18,7 +18,11 @@
 
     <main>
         <section class="image-container">
-            <img src="images/Strange Tree in Rocky Area.jpg" alt="Socotra Island">
+            <picture>
+                <source media="(min-width: 769px)" srcset="images/Strange Tree in Rocky Area.jpg">
+                <source media="(max-width: 768px)" srcset="images/Colorful Dress Woman.jpg">
+                <img src="images/Strange Tree in Rocky Area.jpg" alt="Socotra Island">
+            </picture>
 
             <div class="data">
                 <h2>Data</h2>
@@ -52,5 +56,4 @@
 
     <script src="scripts/place.js"></script>
 </body>
-
 </html>
