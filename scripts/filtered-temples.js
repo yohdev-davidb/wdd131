@@ -61,7 +61,7 @@ const temples = [
         dedicated: "1893, April, 6",
         area: 253000,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake/400x250/salt-lake-temple-lds-816146-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-53926.jpg"
     },
     {
         templeName: "Provo City Center",
@@ -69,7 +69,7 @@ const temples = [
         dedicated: "2016, March, 20",
         area: 85000,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/provo-city-center/400x250/provo-city-center-temple-1348447-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/provo-city-center-temple/provo-city-center-temple-11074.jpg"
     },
     {
         templeName: "Hong Kong China",
@@ -77,7 +77,7 @@ const temples = [
         dedicated: "1996, May, 26",
         area: 21000,
         imageUrl:
-            "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/hong-kong-china/400x250/hong-kong-china-temple-1905475-wallpaper.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/hong-kong-china-temple/hong-kong-china-temple-28220.jpg"
     },
 ];
 
@@ -85,10 +85,14 @@ const navLinks = document.querySelectorAll('nav ul li a');
 const mainTitle = document.querySelector('main h1');
 const imageGrid = document.querySelector('.image-grid');
 
+// Function to render temples
 function renderTemples(templesToRender) {
+    // Clear the imageGrid
     imageGrid.innerHTML = '';
 
+    // Loop through templesToRender array
     templesToRender.forEach(temple => {
+        // Create elements
         const card = document.createElement('div');
         card.classList.add('temple-card');
 
@@ -109,6 +113,7 @@ function renderTemples(templesToRender) {
         image.alt = temple.templeName;
         image.loading = 'lazy';
 
+        // Append elements
         card.appendChild(templeName);
         card.appendChild(location);
         card.appendChild(dedicated);
@@ -119,6 +124,7 @@ function renderTemples(templesToRender) {
     });
 }
 
+// Initial render of all temples
 renderTemples(temples);
 
 navLinks.forEach(link => {
@@ -129,8 +135,10 @@ navLinks.forEach(link => {
 
         this.classList.add('active');
 
+        // Get the filter type
         const filterType = this.textContent.trim().toLowerCase();
 
+        // Filter the temples based on filterType
         let filteredTemples;
 
         if (filterType === 'home') {
@@ -153,8 +161,10 @@ navLinks.forEach(link => {
             filteredTemples = temples;
         }
 
+        // Render the filtered temples
         renderTemples(filteredTemples);
 
+        // Update the main h1 title
         mainTitle.textContent = this.textContent;
 
     });
@@ -167,9 +177,11 @@ menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+// Update the footer copyright year
 const currentYear = new Date().getFullYear();
 const copyright = document.getElementById('copyright');
 
 copyright.innerHTML = `&copy; ${currentYear} Dave Brooke - Statesville`;
 
+// Update the last modified date
 document.getElementById("lastModified").textContent = new Date(document.lastModified).toLocaleDateString();

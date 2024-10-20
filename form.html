@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product Review Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/form.css">
+</head>
+
+<body>
+    <h1>Product Review Form</h1>
+    <form method="get" action="review.html">
+        <div class="form-group">
+            <label for="productName">Product Name:</label>
+            <select id="productName" name="productName" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Overall Rating:</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="overallRating" value="5" required>
+                <label for="star5" title="5 stars">&starf;</label>
+
+                <input type="radio" id="star4" name="overallRating" value="4">
+                <label for="star4" title="4 stars">&starf;</label>
+
+                <input type="radio" id="star3" name="overallRating" value="3">
+                <label for="star3" title="3 stars">&starf;</label>
+
+                <input type="radio" id="star2" name="overallRating" value="2">
+                <label for="star2" title="2 stars">&starf;</label>
+
+                <input type="radio" id="star1" name="overallRating" value="1">
+                <label for="star1" title="1 star">&starf;</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="installationDate">Date of Installation:</label>
+            <input type="date" id="installationDate" name="installationDate" required>
+        </div>
+
+        <div class="form-group">
+            <label>Useful Features (Check all that apply):</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="feature1" name="usefulFeatures[]" value="Feature A">
+                <label for="feature1">Feature A</label>
+
+                <input type="checkbox" id="feature2" name="usefulFeatures[]" value="Feature B">
+                <label for="feature2">Feature B</label>
+
+                <input type="checkbox" id="feature3" name="usefulFeatures[]" value="Feature C">
+                <label for="feature3">Feature C</label>
+
+                <input type="checkbox" id="feature4" name="usefulFeatures[]" value="Feature D">
+                <label for="feature4">Feature D</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="writtenReview">Written Review:</label>
+            <textarea id="writtenReview" name="writtenReview" rows="5" cols="33"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" name="userName">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit Review">
+        </div>
+    </form>
+
+    <footer>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="/scripts/form.js"></script>
+</body>
+
+</html>
