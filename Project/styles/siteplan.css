@@ -1,0 +1,58 @@
+/* Root Variables */
+:root {
+    --primary-color: #0B3D91;
+    --secondary-color: #DAA520;
+    --accent-color: #C0C0C0;
+    --heading-font: 'Cinzel Decorative', serif;
+    --body-font: 'Lato', sans-serif;
+    --accent-font: 'Roboto Mono', monospace;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color);
+    margin-top: 1em;
+}
+
+p,
+li {
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    font-family: var(--accent-font);
+    background-color: rgba(192, 192, 192, 0.2);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+header,
+footer {
+    background-color: var(--primary-color);
+    padding: 10px;
+    text-align: center;
+}
