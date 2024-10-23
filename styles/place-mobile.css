@@ -3,28 +3,16 @@
     --secondary-bg-color: #336633;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex: 1;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: var(--main-bg-color);
     color: white;
-    padding: 1em;
+    padding: 0.5em;
     text-align: center;
 }
 
@@ -57,12 +45,8 @@ ul li {
     width: 90%;
     margin: 10px auto;
     padding: 10px;
+    border-radius: 8px;
     box-shadow: none;
-}
-
-.data ul,
-.weather ul {
-    padding: 15px;
 }
 
 .data h2,
@@ -75,15 +59,22 @@ ul li {
     border-top-right-radius: 8px;
 }
 
+.data ul,
+.weather ul {
+    padding: 15px;
+}
+
+li {
+    text-decoration: none;
+    color: inherit;
+}
+
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem;
     width: 100%;
-    position: relative;
-    margin-top: auto;
-    bottom: auto;
 }
 
 footer::after {

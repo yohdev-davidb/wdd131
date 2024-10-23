@@ -94,21 +94,3 @@ footer::after {
     height: 4px;
     background-color: var(--main-bg-color);
 }
-
-@media screen and (max-width: 768px) {
-    header {
-        padding: 0.5em;
-    }
-
-    .data,
-    .weather {
-        position: static;
-        width: 90%;
-        margin: 10px auto;
-    }
-
-    .data ul,
-    .weather ul {
-        padding: 15px;
-    }
-}
