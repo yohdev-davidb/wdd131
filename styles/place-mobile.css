@@ -1,3 +1,8 @@
+:root {
+    --main-bg-color: #0073e6;
+    --secondary-bg-color: #336633;
+}
+
 html,
 body {
     height: 100%;
@@ -6,6 +11,7 @@ body {
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -16,7 +22,7 @@ main {
 }
 
 header {
-    background-color: #0073e6;
+    background-color: var(--main-bg-color);
     color: white;
     padding: 1em;
     text-align: center;
@@ -37,7 +43,7 @@ header {
 .weather,
 ul li {
     list-style-type: none;
-    padding: .5rem;
+    padding: 0.5rem;
 }
 
 .bold {
@@ -61,7 +67,7 @@ ul li {
 
 .data h2,
 .weather h2 {
-    background-color: #336633;
+    background-color: var(--secondary-bg-color);
     color: white;
     margin: 0;
     padding: 15px;
@@ -78,4 +84,11 @@ footer {
     position: relative;
     margin-top: auto;
     bottom: auto;
+}
+
+footer::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background-color: var(--main-bg-color);
 }
