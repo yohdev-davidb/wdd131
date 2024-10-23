@@ -7,37 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="David Brooke">
     <meta name="description"
-        content="A page that shows temples and changes dynamically depending on the size of screen. Has a hamburger menu.">
-    <title> Temple Album </title>
+        content="An album of temples that dynamically changes depending on the screen size. Includes a hamburger menu.">
+    <title>Temple Album</title>
     <link href="styles/filtered-temples.css" rel="stylesheet">
     <link href="styles/filtered-temples-large.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
+        <h1>Temple Album</h1>
         <button class="menu-toggle">&#9776;</button>
         <nav>
             <ul>
-                <h1> Temple Album </h1>
-                <li> <a href="#" data-filter="home"> Home </a> </li>
-                <li><a href="#" data-filter="old"> Old </a> </li>
-                <li><a href="#" data-filter="new"> New </a> </li>
-                <li><a href="#" data-filter="large"> Large </a> </li>
-                <li><a href="#" data-filter="small"> Small </a> </li>
+                <li><a href="#" data-filter="home">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="large">Large</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h1>Home</h1>
+        <h1>Temple Album Home</h1>
+        <h2>Welcome to the Temple Album</h2>
         <div class="image-grid">
-            <!-- Temple cards will be dynamically inserted here -->
         </div>
     </main>
 
     <footer>
-        <p id="copyright">&copy; 2024 Dave Brooke - Statesville</p>
+        <p id="copyright">&copy; 2024 David Brooke - Statesville</p>
         <p>Last Modification: <span id="lastModified"></span></p>
     </footer>
 
