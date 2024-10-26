@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Creator - D&D Character Forge</title>
+    <link rel="stylesheet" href="styles/character_creator_page.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">D&D Character Forge</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="creator.html" class="active">Character Creator</a>
+                <a href="guide.html">Guide</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Create Your Character</h1>
+        <p>Bring your character concept to life with our step-by-step creator</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <div class="step-label">Basic Info</div>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <div class="step-label">Abilities</div>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-label">Details</div>
+            </div>
+        </div>
+
+        <!-- Character Form -->
+        <form id="characterForm" class="character-form">
+            <!-- Step 1: Basic Information -->
+            <div class="form-step active" data-step="1">
+                <h2>Basic Information</h2>
+                <div class="form-group">
+                    <label for="charName">Character Name</label>
+                    <input type="text" id="charName" name="charName" required>
+                </div>
+                <div class="form-group">
+                    <label for="race">Race</label>
+                    <select id="race" name="race" required>
+                        <option value="">Select a race</option>
+                        <option value="dragonborn">Dragonborn</option>
+                        <option value="dwarf">Dwarf</option>
+                        <option value="elf">Elf</option>
+                        <option value="gnome">Gnome</option>
+                        <option value="half-elf">Half-Elf</option>
+                        <option value="half-orc">Half-Orc</option>
+                        <option value="halfling">Halfling</option>
+                        <option value="human">Human</option>
+                        <option value="tiefling">Tiefling</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <select id="class" name="class" required>
+                        <option value="">Select a class</option>
+                        <option value="barbarian">Barbarian</option>
+                        <option value="bard">Bard</option>
+                        <option value="cleric">Cleric</option>
+                        <option value="druid">Druid</option>
+                        <option value="fighter">Fighter</option>
+                        <option value="monk">Monk</option>
+                        <option value="paladin">Paladin</option>
+                        <option value="ranger">Ranger</option>
+                        <option value="rogue">Rogue</option>
+                        <option value="sorcerer">Sorcerer</option>
+                        <option value="warlock">Warlock</option>
+                        <option value="wizard">Wizard</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="level">Level</label>
+                    <input type="number" id="level" name="level" min="1" max="20" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="alignment">Alignment</label>
+                    <select id="alignment" name="alignment" required>
+                        <option value="">Select an alignment</option>
+                        <option value="lg">Lawful Good</option>
+                        <option value="ng">Neutral Good</option>
+                        <option value="cg">Chaotic Good</option>
+                        <option value="ln">Lawful Neutral</option>
+                        <option value="tn">True Neutral</option>
+                        <option value="cn">Chaotic Neutral</option>
+                        <option value="le">Lawful Evil</option>
+                        <option value="ne">Neutral Evil</option>
+                        <option value="ce">Chaotic Evil</option>
+                    </select>
+                </div>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-primary next-step">Next Step</button>
+                </div>
+            </div>
+
+            <!-- Step 2: Abilities -->
+            <div class="form-step" data-step="2">
+                <h2>Ability Scores</h2>
+                <div class="abilities-grid">
+                    <div class="form-group">
+                        <label for="strength">Strength</label>
+                        <div class="ability-input">
+                            <input type="number" id="strength" name="strength" value="8" min="3" max="20" required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dexterity">Dexterity</label>
+                        <div class="ability-input">
+                            <input type="number" id="dexterity" name="dexterity" value="8" min="3" max="20" required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="constitution">Constitution</label>
+                        <div class="ability-input">
+                            <input type="number" id="constitution" name="constitution" value="8" min="3" max="20"
+                                required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="intelligence">Intelligence</label>
+                        <div class="ability-input">
+                            <input type="number" id="intelligence" name="intelligence" value="8" min="3" max="20"
+                                required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="wisdom">Wisdom</label>
+                        <div class="ability-input">
+                            <input type="number" id="wisdom" name="wisdom" value="8" min="3" max="20" required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="charisma">Charisma</label>
+                        <div class="ability-input">
+                            <input type="number" id="charisma" name="charisma" value="8" min="3" max="20" required>
+                            <span class="modifier">-1</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary roll-abilities">Roll Abilities</button>
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                    <button type="button" class="btn btn-primary next-step">Next Step</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Character Details -->
+            <div class="form-step" data-step="3">
+                <h2>Character Details</h2>
+
+                <div class="details-grid">
+                    <div class="form-group">
+                        <label for="background">Background Story</label>
+                        <textarea id="background" name="background" rows="4"
+                            placeholder="Describe your character's background and history..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appearance">Physical Appearance</label>
+                        <textarea id="appearance" name="appearance" rows="4"
+                            placeholder="Describe your character's physical appearance..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personality">Personality Traits</label>
+                        <textarea id="personality" name="personality" rows="4"
+                            placeholder="Describe your character's personality traits..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ideals">Ideals</label>
+                        <textarea id="ideals" name="ideals" rows="4"
+                            placeholder="What principles does your character believe in..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bonds">Bonds</label>
+                        <textarea id="bonds" name="bonds" rows="4"
+                            placeholder="What connects your character to people, places, or events..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flaws">Flaws</label>
+                        <textarea id="flaws" name="flaws" rows="4"
+                            placeholder="What are your character's vices or weaknesses..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-secondary prev-step">Previous</button>
+                    <button type="submit" class="btn btn-primary">Save Character</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>D&D Character Forge</h3>
+                <p>Your ultimate tool for creating and managing D&D characters.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="guide.html">User Guide</a></p>
+                <p><a href="about.html">About Us</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <p>D&D Character Forge is not affiliated with Wizards of the Coast.
+                    Dungeons & Dragons and D&D are trademarks of Wizards of the Coast LLC.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 D&D Character Forge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/character_creator_page.js"></script>
+</body>
+
+</html>
