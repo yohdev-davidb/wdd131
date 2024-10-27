@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeAbilityScores();
     loadSavedCharacter();
 
-    // Add form submit handler
     const form = document.getElementById('characterForm');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -19,20 +18,16 @@ function initializeFormNavigation() {
     const prevButtons = document.querySelectorAll('.prev-step');
     let currentStep = 1;
 
-    // Navigate between steps
     function goToStep(step) {
-        // Hide all steps
         steps.forEach(s => {
             s.classList.remove('active');
         });
 
-        // Show current step
         const currentStepElement = document.querySelector(`[data-step="${step}"]`);
         if (currentStepElement) {
             currentStepElement.classList.add('active');
         }
 
-        // Update progress indicators
         progressSteps.forEach((progressStep, index) => {
             if (index + 1 === step) {
                 progressStep.classList.add('active');
@@ -45,7 +40,6 @@ function initializeFormNavigation() {
             }
         });
 
-        // Update current step
         currentStep = step;
     }
 
@@ -68,7 +62,6 @@ function initializeFormNavigation() {
         return isValid;
     }
 
-    // Event listeners for next buttons
     nextButtons.forEach(button => {
         button.addEventListener('click', () => {
             if (validateStep(currentStep)) {
@@ -78,14 +71,12 @@ function initializeFormNavigation() {
         });
     });
 
-    // Event listeners for previous buttons
     prevButtons.forEach(button => {
         button.addEventListener('click', () => {
             goToStep(currentStep - 1);
         });
     });
 
-    // Initialize first step
     goToStep(1);
 }
 
@@ -102,7 +93,6 @@ function initializeAbilityScores() {
 
     function rollAbilityScores() {
         abilityInputs.forEach(input => {
-            // Roll 4d6, drop lowest
             const rolls = Array.from({ length: 4 }, () => Math.floor(Math.random() * 6) + 1)
                 .sort((a, b) => b - a)
                 .slice(0, 3)
@@ -114,7 +104,6 @@ function initializeAbilityScores() {
         saveProgress();
     }
 
-    // Event listeners for ability score changes
     abilityInputs.forEach(input => {
         input.addEventListener('change', () => {
             const value = parseInt(input.value);
@@ -124,11 +113,9 @@ function initializeAbilityScores() {
             saveProgress();
         });
 
-        // Initialize modifiers
         updateModifier(input);
     });
 
-    // Roll button event listener
     if (rollButton) {
         rollButton.addEventListener('click', rollAbilityScores);
     }
@@ -170,12 +157,10 @@ function generateCharacterPDF() {
     const doc = new jsPDF();
     const formData = getFormData();
 
-    // Set font styles
     doc.setFont("helvetica", "bold");
     doc.setFontSize(20);
     doc.text("D&D Character Sheet", 105, 20, { align: "center" });
 
-    // Basic Information
     doc.setFontSize(16);
     doc.text("Basic Information", 20, 40);
     doc.setFont("helvetica", "normal");
@@ -186,7 +171,6 @@ function generateCharacterPDF() {
     doc.text(`Level: ${formData.basics.level}`, 20, 80);
     doc.text(`Alignment: ${formData.basics.alignment}`, 20, 90);
 
-    // Ability Scores
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
     doc.text("Ability Scores", 20, 110);
@@ -199,7 +183,6 @@ function generateCharacterPDF() {
     doc.text(`Wisdom: ${formData.abilities.wisdom} (${getModifierString(formData.abilities.wisdom)})`, 20, 160);
     doc.text(`Charisma: ${formData.abilities.charisma} (${getModifierString(formData.abilities.charisma)})`, 20, 170);
 
-    // Character Details
     doc.addPage();
     doc.setFont("helvetica", "bold");
     doc.setFontSize(16);
@@ -244,7 +227,6 @@ function generateCharacterPDF() {
     const flawsLines = doc.splitTextToSize(formData.details.flaws || '', 170);
     doc.text(flawsLines, 20, 130);
 
-    // Save the PDF
     const characterName = formData.basics.name.replace(/\s+/g, '_').toLowerCase();
     doc.save(`${characterName}_character_sheet.pdf`);
 }
@@ -258,13 +240,11 @@ function loadSavedCharacter() {
     const savedData = localStorage.getItem('characterProgress');
     if (savedData) {
         const data = JSON.parse(savedData);
-        // Populate basic info
         Object.entries(data.basics).forEach(([key, value]) => {
             const input = document.querySelector(`[name="${key}"]`);
             if (input) input.value = value;
         });
 
-        // Populate abilities
         Object.entries(data.abilities).forEach(([key, value]) => {
             const input = document.querySelector(`[name="${key}"]`);
             if (input) {
@@ -274,7 +254,6 @@ function loadSavedCharacter() {
             }
         });
 
-        // Populate details
         Object.entries(data.details).forEach(([key, value]) => {
             const input = document.querySelector(`[name="${key}"]`);
             if (input) input.value = value;
@@ -301,13 +280,10 @@ function saveCharacter() {
 
         localStorage.setItem('savedCharacters', JSON.stringify(characters));
 
-        // Generate and download PDF
         generateCharacterPDF();
 
-        // Show success message
         showMessage('Character saved successfully!', 'success');
 
-        // Optional: Redirect to character list or home page after short delay
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 2000);

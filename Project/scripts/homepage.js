@@ -1,4 +1,3 @@
-// Initialize Feather Icons
 document.addEventListener('DOMContentLoaded', () => {
     feather.replace();
     initializeMobileMenu();
@@ -6,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeLazyLoading();
 });
 
-// Mobile Menu Functionality
 function initializeMobileMenu() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
@@ -14,12 +12,10 @@ function initializeMobileMenu() {
     mobileMenuBtn.addEventListener('click', () => {
         navMenu.classList.toggle('active');
 
-        // Toggle menu button animation
         const spans = mobileMenuBtn.querySelectorAll('span');
         spans.forEach(span => span.classList.toggle('active'));
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
             navMenu.classList.remove('active');
@@ -27,7 +23,6 @@ function initializeMobileMenu() {
     });
 }
 
-// Testimonials Slider
 function initializeTestimonials() {
     const testimonials = document.querySelectorAll('.testimonial');
     const dots = document.querySelectorAll('.dot');
@@ -41,7 +36,6 @@ function initializeTestimonials() {
         dots[index].classList.add('active');
     }
 
-    // Add click event to dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentTestimonial = index;
@@ -49,14 +43,12 @@ function initializeTestimonials() {
         });
     });
 
-    // Auto-advance testimonials
     setInterval(() => {
         currentTestimonial = (currentTestimonial + 1) % testimonials.length;
         showTestimonial(currentTestimonial);
     }, 5000);
 }
 
-// Lazy Loading for Features
 function initializeLazyLoading() {
     const lazyElements = document.querySelectorAll('[data-lazy="true"]');
 
@@ -77,7 +69,6 @@ function initializeLazyLoading() {
     });
 }
 
-// Form Validation (for contact forms)
 function validateForm(form) {
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     let isValid = true;
@@ -90,7 +81,6 @@ function validateForm(form) {
             clearError(input);
         }
 
-        // Email validation
         if (input.type === 'email' && input.value) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(input.value)) {
@@ -126,7 +116,6 @@ function clearError(input) {
     input.classList.remove('error');
 }
 
-// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

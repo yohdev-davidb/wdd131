@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Feather Icons
     feather.replace();
 
-    // Initialize components
     initializeSidebarNavigation();
     initializeSmoothScroll();
     initializeFAQInteractions();
@@ -13,7 +11,6 @@ function initializeSidebarNavigation() {
     const navLinks = document.querySelectorAll('.guide-nav a');
     const sections = document.querySelectorAll('.guide-section');
 
-    // Update active link based on scroll position
     window.addEventListener('scroll', () => {
         let currentSection = '';
 
@@ -43,7 +40,6 @@ function initializeSmoothScroll() {
             const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                // Calculate offset considering fixed header
                 const headerOffset = 80;
                 const elementPosition = targetSection.offsetTop;
                 const offsetPosition = elementPosition - headerOffset;
@@ -53,7 +49,6 @@ function initializeSmoothScroll() {
                     behavior: 'smooth'
                 });
 
-                // Update URL without scrolling
                 history.pushState(null, '', targetId);
             }
         });
@@ -67,7 +62,6 @@ function initializeFAQInteractions() {
         const question = item.querySelector('h4');
         const answer = item.querySelector('p');
 
-        // Initialize state
         answer.style.maxHeight = '0';
         answer.style.overflow = 'hidden';
         answer.style.transition = 'max-height 0.3s ease-out';
@@ -76,7 +70,6 @@ function initializeFAQInteractions() {
         question.addEventListener('click', () => {
             const isExpanded = item.getAttribute('data-expanded') === 'true';
 
-            // Close all other FAQs
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     const otherAnswer = otherItem.querySelector('p');
@@ -85,7 +78,6 @@ function initializeFAQInteractions() {
                 }
             });
 
-            // Toggle current FAQ
             if (isExpanded) {
                 answer.style.maxHeight = '0';
                 item.setAttribute('data-expanded', 'false');
@@ -101,7 +93,6 @@ function setupScrollSpy() {
     const sections = document.querySelectorAll('.guide-section');
     const navItems = document.querySelectorAll('.guide-nav a');
 
-    // Add intersection observer for each section
     const observerOptions = {
         root: null,
         rootMargin: '-20% 0px -70% 0px', // Adjust these values to change when the active state triggers
@@ -111,10 +102,8 @@ function setupScrollSpy() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Remove active class from all nav items
                 navItems.forEach(item => item.classList.remove('active'));
 
-                // Add active class to corresponding nav item
                 const targetId = entry.target.getAttribute('id');
                 const correspondingNavItem = document.querySelector(`.guide-nav a[href="#${targetId}"]`);
                 if (correspondingNavItem) {
@@ -127,7 +116,6 @@ function setupScrollSpy() {
     sections.forEach(section => observer.observe(section));
 }
 
-// Handle mobile navigation if needed
 function initializeMobileNav() {
     const menuButton = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
@@ -137,7 +125,6 @@ function initializeMobileNav() {
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!navLinks.contains(e.target) && !menuButton.contains(e.target)) {
                 navLinks.classList.remove('active');
@@ -146,7 +133,6 @@ function initializeMobileNav() {
     }
 }
 
-// Progress bar for reading progress
 function initializeReadingProgress() {
     const progressBar = document.createElement('div');
     progressBar.className = 'reading-progress';
@@ -162,7 +148,6 @@ function initializeReadingProgress() {
     });
 }
 
-// Add copy code functionality if needed
 function initializeCodeCopy() {
     const codeBlocks = document.querySelectorAll('pre code');
 
@@ -190,7 +175,6 @@ function initializeCodeCopy() {
     });
 }
 
-// Initialize additional features if needed
 document.addEventListener('DOMContentLoaded', () => {
     initializeReadingProgress();
     initializeCodeCopy();
